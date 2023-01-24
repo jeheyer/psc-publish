@@ -1,6 +1,6 @@
 variable "project_id" {
   description = "GCP Project ID to Publish the Service in"
-  type = string
+  type        = string
 }
 variable "name" {
   description = "Name for the Published Service"
@@ -28,6 +28,12 @@ variable "nat_subnet_names" {
 variable "target_service_id" {
   description = "Forwarding Rule Service ID to publish"
   type        = string
+  default = null
+}
+variable "forwarding_rule_name" {
+  description = "Forwarding Rule Name to publish (must be in same project)"
+  type        = string
+  default = null
 }
 variable "enable_proxy_protocol" {
   description = "enable the proxy protocol"
@@ -46,6 +52,6 @@ variable "accept_project_ids" {
 }
 variable "connection_limit" {
   description = "Max number of connections for each consumer project"
-  type    = number
-  default = 10
+  type        = number
+  default     = 10
 }
